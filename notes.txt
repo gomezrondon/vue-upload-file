@@ -1,0 +1,20 @@
+#update vue cli
+npm i -g @vue/cli to update
+#validate version
+vue --version
+
+# create the project
+vue create vue-upload-file
+
+# generate the image
+
+docker build -t vue-upload-file .
+
+# tag and push
+docker tag vue-upload-file:latest gcr.io/project-id/vue-upload-file:v1
+docker push gcr.io/project-id/vue-upload-file:v1
+
+# build with production env variables
+npm run serve  // solo funciona con local env
+npm run build -prod
+
